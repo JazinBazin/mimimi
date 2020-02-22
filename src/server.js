@@ -50,8 +50,8 @@ app.get("/api/articles", (req, res) => {
     const range = JSON.parse(req.query.range);
     Article.find({})
         .then(articles => {
-            console.log(articles.length)
-            const contentRange = `articles ${range[0]}-${range[1]}/${articles.length}`;
+            const rangeEnd = min(range[1], articles.length);
+            const contentRange = `articles ${range[0]}-${rangeEnd}/${articles.length}`;
             res.setHeader("Content-Range", contentRange);
             articlesToSend = [];
             articles.map(article => {

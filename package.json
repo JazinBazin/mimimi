@@ -1,0 +1,36 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run watch\" \"npm run server\"",
+    "start-debug": "concurrently --kill-others \"npm run watch\" \"npm run server-debug\"",
+    "server": "node src/server.js",
+    "server-debug": "node --nolazy --inspect-brk=9229 src/server.js",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "node src/test.js"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.2",
+    "css-loader": "^3.4.0",
+    "style-loader": "^1.1.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.8.2",
+    "ra-data-simple-rest": "^3.2.2",
+    "react": "^16.12.0",
+    "react-admin": "^3.2.3",
+    "react-dom": "^16.12.0"
+  }
+}

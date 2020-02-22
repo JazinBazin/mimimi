@@ -1,0 +1,5 @@
+node_modules
+.vscode
+/media
+/dist
+package-lock.json
